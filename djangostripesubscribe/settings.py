@@ -129,3 +129,22 @@ STATIC_URL = '/static/'
 STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PK")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SK")
 STRIPE_PRICE_ID = os.environ.get("STRIPE_PRICE_ID")
+
+# AllAuth
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# We have to set this variable, because we enabled 'django.contrib.sites'
+SITE_ID = 1
+
+# User will be redirected to this page after logging in
+LOGIN_REDIRECT_URL = '/'
+
+# If you don't have an email server running yet add this line to avoid any possible errors.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
