@@ -124,3 +124,4 @@ STATIC_URL = '/static/'
 
 STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PK")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SK")
+STRIPE_PRICE_ID = os.environ.get("STRIPE_PRICE_ID")
